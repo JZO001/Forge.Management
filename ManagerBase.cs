@@ -368,7 +368,7 @@ namespace Forge.Management
             }
             mAsyncActiveStartEvent.WaitOne();
             mStartFuncDelegate = d;
-            return d.BeginInvoke<ManagerStateEnum>(callback, state);
+            return AsyncDelegateMethodExtensions.BeginInvoke<ManagerStateEnum>(d, callback, state);
         }
 
         /// <summary>Ends the asynchronous start process.</summary>
